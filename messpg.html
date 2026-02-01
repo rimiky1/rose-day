@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beautiful Rose Message 🌹</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Animated falling petals -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+      <div class="letter">
+        <h1>
+          Hii Nidhi,<br />
+          Ye forever lasting digital rose meri taraf se tumhare liye..<br />
+          Nidhi tum mujhe genuinely bahut acchi lagti ho aur main sach mai
+          chahata hu ki hum apne iss relation ko friendship se relationship tk
+          leke jaaye phir chahe uske liye mereko How to be a prefect Boyfriend
+          101 bhi kyuna padhna padhe main padhunga..<br />Toh aaj iss Rose Day
+          pr main apna pyaar iss digital rose ke saath express kr rha hu (umeed
+          hai tumhe accha lagega).<br />
+          (P.S.- Real wale ke liye address bhejdo hostel ka pls aur bata dena kb
+          jaa rhi ho hostel kyunki ghar pr tumhari mummy ko mil jane ka darr
+          hai)
+        </h1>
+      </div>
+      <div class="rose">
+        <div class="flower">
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+        </div>
+        <div class="leaf">
+          <div class="stem"></div>
+          <div class="leafs"></div>
+          <div class="leafs"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Create continuous falling petals
+      function createFallingPetals() {
+        const particlesContainer = document.getElementById("particles");
+
+        function createPetal() {
+          const petal = document.createElement("div");
+          petal.className = "petal-particle";
+          petal.style.left = Math.random() * 100 + "%";
+          petal.style.animationDuration = Math.random() * 4 + 6 + "s";
+          petal.style.animationDelay = Math.random() * 2 + "s";
+          petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+          particlesContainer.appendChild(petal);
+
+          // Remove petal after animation
+          setTimeout(() => {
+            petal.remove();
+          }, 10000);
+        }
+
+        // Create petals continuously
+        setInterval(createPetal, 300);
+        // Initial burst
+        for (let i = 0; i < 20; i++) {
+          setTimeout(createPetal, i * 100);
+        }
+      }
+
+      // Start petal animation on load
+      window.addEventListener("load", createFallingPetals);
+    </script>
+  </body>
+</html>
